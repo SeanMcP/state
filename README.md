@@ -8,10 +8,9 @@ Implementing React's state management in vanilla JavaScript
 this.initState({ greeting: 'Hello', name: 'world' })
 this.state
 // -> { greeting: "Hello", name: "world" }
-this.setState({ greeting: 'Howdy' })`${this.state.greeting}, ${
-    this.state.name
-}!`
-// -> "Howdy, world!"
+this.setState({ greeting: 'Howdy' })
+this.state
+// -> { greeting: "Howdy", name: "world" }
 ```
 
 ## Referencing `prevState`
