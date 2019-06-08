@@ -20,5 +20,5 @@ this.setState = function(update, callback) {
         ...(typeof update === 'function' ? update(prevState) : update)
     }
     setAppState(nextState)
-    if (callback) callback(nextState)
+    if (callback) callback()
 }
