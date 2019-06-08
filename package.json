@@ -1,0 +1,32 @@
+{
+    "name": "@seanmcp/state",
+    "version": "0.0.0--prerelease.0",
+    "description": "Implementing React's state management in vanilla JavaScript",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "build": "terser index.js --compress --mangle --output lib/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SeanMcP/state.git"
+    },
+    "keywords": [
+        "state",
+        "state management",
+        "react state",
+        "vanilla"
+    ],
+    "author": "Sean McPherson",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/SeanMcP/state/issues"
+    },
+    "homepage": "https://github.com/SeanMcP/state#readme",
+    "devDependencies": {
+        "terser": "^4.0.0"
+    }
+}
