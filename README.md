@@ -1,3 +1,3 @@
 # `@seanmcp/state`
 
-An implementation of React's state in JavaScript
+Implementing React's state management in vanilla JavaScript
