@@ -1,7 +1,7 @@
-this.initState = function(value) {
+window.initState = function(value) {
     setAppState(value)
 
-    this.initState = function() {
+    window.initState = function() {
         console.warn(
             '@seanmcp/state: You cannot call `this.initState()` more than once. To update the current state, use `this.setState()`.'
         )
@@ -14,15 +14,15 @@ function getAppState() {
 
 function setAppState(state) {
     window.localStorage.setItem('state', JSON.stringify(state))
-    delete this.state
-    this.state = state
-    Object.freeze(this.state)
+    delete window.state
+    window.state = state
+    Object.freeze(window.state)
 }
 
-this.setState = function(update, callback) {
+window.setState = function(update, callback) {
     const prevState = getAppState()
     const nextState = {
-        ...state,
+        ...prevState,
         ...(typeof update === 'function' ? update(prevState) : update)
     }
     setAppState(nextState)
