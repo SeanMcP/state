@@ -1,5 +1,11 @@
 this.initState = function(value) {
     setAppState(value)
+
+    this.initState = function() {
+        console.warn(
+            '@seanmcp/state: You cannot call `this.initState()` more than once. To update the current state, use `this.setState()`.'
+        )
+    }
 }
 
 function getAppState() {
