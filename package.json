@@ -1,6 +1,6 @@
 {
     "name": "@seanmcp/state",
-    "version": "0.0.0--prerelease.0",
+    "version": "0.0.0--prerelease.1",
     "description": "Implementing React's state management in vanilla JavaScript",
     "main": "lib/index.js",
     "files": [
