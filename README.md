@@ -30,6 +30,34 @@ this.setState({ is: 'fresh' }, () => console.log(this.state.is))
 // -> "fresh"
 ```
 
+## Reacting to state change
+
+Before updating the application state, `this.setState()` does a shallow comparison between the previous and next states. If there is a change, the state is updated, the callback is called (if present), and a custom `state` event is triggered on the `window` object.
+
+To react to state changes, add a `state` event listener to `window` that renders based on data from state:
+
+```js
+this.initState({ items: [] })
+
+function addItem() {
+    this.setState(prevState => {
+        const items = [...prevState.items]
+        items.push(new Date().getTime())
+        return {
+            items
+        }
+    })
+}
+
+function renderItems() {
+    // DOM manipulation
+}
+
+window.addEventListener('state', () => {
+    renderItems()
+})
+```
+
 ## Questions
 
 ### Why can't I initialize state like in React?

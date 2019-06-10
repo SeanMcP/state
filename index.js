@@ -1,3 +1,5 @@
+window.stateEvent = new Event('state')
+
 window.initState = function(value) {
     setAppState(value)
 
@@ -25,5 +27,6 @@ window.setState = function(update, callback) {
     if (JSON.stringify(prevState) !== JSON.stringify(nextState)) {
         setAppState(nextState)
         if (callback) callback()
+        window.dispatchEvent(window.stateEvent)
     }
 }
