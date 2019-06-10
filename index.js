@@ -8,10 +8,6 @@ window.initState = function(value) {
     }
 }
 
-function getAppState() {
-    return JSON.parse(window.localStorage.getItem('state'))
-}
-
 function setAppState(state) {
     window.localStorage.setItem('state', JSON.stringify(state))
     delete window.state
@@ -20,11 +16,14 @@ function setAppState(state) {
 }
 
 window.setState = function(update, callback) {
-    const prevState = getAppState()
+    const prevState = JSON.parse(window.localStorage.getItem('state'))
     const nextState = {
         ...prevState,
         ...(typeof update === 'function' ? update(prevState) : update)
     }
-    setAppState(nextState)
-    if (callback) callback()
+
+    if (JSON.stringify(prevState) !== JSON.stringify(nextState)) {
+        setAppState(nextState)
+        if (callback) callback()
+    }
 }
