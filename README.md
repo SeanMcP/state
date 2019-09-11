@@ -98,4 +98,4 @@ window.addEventListener('state', () => {
 
 ### Why can't I initialize state like in React?
 
-`@seanmcp/state` stores all data in local storage, which needs to be initialized separately with `this.initState()`.
+`@seanmcp/state` stores all data in session storage, which needs to be initialized separately with `this.initState()`.

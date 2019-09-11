@@ -11,14 +11,14 @@ window.initState = function(value) {
 }
 
 function setAppState(state) {
-    window.localStorage.setItem('state', JSON.stringify(state))
+    window.sessionStorage.setItem('state', JSON.stringify(state))
     delete window.state
     window.state = state
     Object.freeze(window.state)
 }
 
 window.setState = function(update, callback) {
-    const prevState = JSON.parse(window.localStorage.getItem('state'))
+    const prevState = JSON.parse(window.sessionStorage.getItem('state'))
     const nextState = {
         ...prevState,
         ...(typeof update === 'function' ? update(prevState) : update)
